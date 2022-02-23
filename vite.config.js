@@ -26,9 +26,7 @@ export default defineConfig({
     viteClean(),
     copy({
       targets: [
-        { src: './css/', dest: 'dist/css' },
-        { src: 'js', dest: 'dist/js' },
-        { src: 'img', dest: 'dist/img' }
+        { src: './*.html', dest: 'dist/' },
       ]
     })
   ]
