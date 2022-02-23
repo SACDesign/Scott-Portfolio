@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">ast
+    <meta charset="utf-8">
     <title>&nbsp Ina Minjarez Campaign</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +16,39 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon3.png">
+    <!-- JavaScript files-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
+    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="js/front.js"></script>
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to BootstrapTemple website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+      
+    </script>
+    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
   <body>
     <div class="sidebar">
@@ -30,20 +63,11 @@
               <!-- Link--><a class="sidebar-link h6 text-uppercase letter-spacing-2 fw-bold text-sm" href="text.html">Who Am I?</a>
             </li>
             <li class="mb-2 pb-1">
-              <!-- Link--><a class="sidebar-link h6 text-uppercase letter-spacing-2 fw-bold text-sm active" href="detail.html">Details</a>
+              <!-- Link--><a class="sidebar-link h6 text-uppercase letter-spacing-2 fw-bold text-sm active" href="#">Details</a>
             </li>
           </ul>
         </div>
-        <div class="px-4 py-3">
-          <ul class="list-inline list-social mb-3">
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-linkedin"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-dribbble"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fas fa-envelope"></i></a></li>
-          </ul>
-        </div>
+        
       </div>
     </div>
     <div class="page-holder">
@@ -68,13 +92,13 @@
             </div>
           </div>
           <div class="row mb-5">
-            <div class="col-lg-7"><a class="glightbox product-view" href="img/inavid.mp4" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid mb-4" src="img/inasign.png" alt="ina_sign"></a>
-                                  <a class="glightbox product-view" href="img/inamask.png" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid mb-4" src="img/inamask.png" alt="ina_logomask"></a>
-                                  <a class="glightbox product-view" href="img/inasticker.png" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid mb-4" src="img/inasticker.png" alt="ina_sticker"></a>
-                                  <a class="glightbox product-view" href="img/inaflag.png" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid mb-4" src="img/inaflag.png" width="200rem" height="auto" alt="ina_flag"></a>
-                                  <a class="glightbox product-view" href="img/inavariations.png" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid2 mb-4" src="img/inavariations.png" width="200rem" height="auto" alt="ina_variations"></a>
-                                  <a class="glightbox product-view" href="img/inabadge.png" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid2 mb-4" src="img/inabadge.png" width="180rem" height="auto" alt="ina_socialbadge"></a>
-                                  <a class="glightbox product-view" href="img/inaoldlogo2.jpg" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid2  mb-4" src="img/inaoldlogo2.jpg" width="125rem" height="auto" alt="ina_old_logo"></a>
+            <div class="col-lg-7"><a class="glightbox product-view" href="img/inavid.mp4" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid mb-4" src="img/inasign.webp" alt="ina_sign"></a>
+                                  <a class="glightbox product-view" href="img/inamask.webp" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid mb-4" src="img/inamask.webp" alt="ina_logomask"></a>
+                                  <a class="glightbox product-view" href="img/inasticker2.png" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid mb-4" src="img/inasticker2.png" alt="ina_sticker"></a>
+                                  <a class="glightbox product-view" href="img/inaflag.webp" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid mb-4" src="img/inaflag.webp" width="200rem" height="auto" alt="ina_flag"></a>
+                                  <a class="glightbox product-view" href="img/inavariations.webp" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid2 mb-4" src="img/inavariations.webp" width="200rem" height="auto" alt="ina_variations"></a>
+                                  <a class="glightbox product-view" href="img/inabadge.webp" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid2 mb-4" src="img/inabadge.webp" width="180rem" height="auto" alt="ina_socialbadge"></a>
+                                  <a class="glightbox product-view" href="img/inaoldlogo2.webp" data-gallery="gallery" data-glightbox="Tour de France"><img class="img-fluid2  mb-4" src="img/inaoldlogo2.webp" width="125rem" height="auto" alt="ina_old_logo"></a>
             </div>
             <div class="col-lg-5 position-sticky">
               <h2 class="concept-header">Learning to freelance the hard way.</h2>
@@ -261,38 +285,6 @@
         </div>
       </footer>
     </div>
-    <!-- JavaScript files-->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
-    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="js/front.js"></script>
-    <script>
-      // ------------------------------------------------------- //
-      //   Inject SVG Sprite - 
-      //   see more here 
-      //   https://css-tricks.com/ajaxing-svg-sprite/
-      // ------------------------------------------------------ //
-      function injectSvgSprite(path) {
-      
-          var ajax = new XMLHttpRequest();
-          ajax.open("GET", path, true);
-          ajax.send();
-          ajax.onload = function(e) {
-          var div = document.createElement("div");
-          div.className = 'd-none';
-          div.innerHTML = ajax.responseText;
-          document.body.insertBefore(div, document.body.childNodes[0]);
-          }
-      }
-      // this is set to BootstrapTemple website as you cannot 
-      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
-      // while using file:// protocol
-      // pls don't forget to change to your domain :)
-      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
-      
-    </script>
-    <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    
   </body>
 </html>
