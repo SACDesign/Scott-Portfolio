@@ -16,6 +16,37 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon3.png">
+    <!-- JavaScript files-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
+    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="js/front.js"></script>
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to BootstrapTemple website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+      
+    </script>
   </head>
   <body>
     <div class="sidebar">
@@ -29,19 +60,7 @@
             <li class="mb-2 pb-1">
               <!-- Link--><a class="sidebar-link h6 text-uppercase letter-spacing-2 fw-bold text-sm active" href="text.html">Who Am I?</a>
             </li>
-            <li class="mb-2 pb-1">
-              <!-- Link--><a class="sidebar-link h6 text-uppercase letter-spacing-2 fw-bold text-sm" href="detail.html">Details</a>
-            </li>
-          </ul>
-        </div>
-        <div class="px-4 py-3">
-          <ul class="list-inline list-social mb-3">
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-facebook-f"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-linkedin"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-dribbble"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fas fa-envelope"></i></a></li>
+            
           </ul>
         </div>
       </div>
@@ -71,7 +90,7 @@
                   <br>
                   You'll find a lot of great work on this website but front-end development is a new concept to me. As a bonus, please feel free to check out this cool <a href="https://s-carter-responsive-design.000webhostapp.com/ingredient-search/index.html">recipe search project</a> I'm working on as I learn this amazing new skillset!</p>
                 <ul class="list-inline mb-0">
-                  <li class="list-inline-item me-5 my-2"><a class="btn btn-primary rounded-pill" href="img/Scott_Carter_Resume1.pdf"> 
+                  <li class="list-inline-item me-5 my-2"><a class="btn btn-primary rounded-pill" href="img/Scott_Carter_Resume1.pdf" target="_blank"> 
                       <span class="align-middle2">Download Resume</span></a></li>
                   <li class="list-inline-item my-2">
                     <ul class="list-inline mb-0">
@@ -249,37 +268,7 @@
         </div>
       </footer>
     </div>
-    <!-- JavaScript files-->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
-    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="js/front.js"></script>
-    <script>
-      // ------------------------------------------------------- //
-      //   Inject SVG Sprite - 
-      //   see more here 
-      //   https://css-tricks.com/ajaxing-svg-sprite/
-      // ------------------------------------------------------ //
-      function injectSvgSprite(path) {
-      
-          var ajax = new XMLHttpRequest();
-          ajax.open("GET", path, true);
-          ajax.send();
-          ajax.onload = function(e) {
-          var div = document.createElement("div");
-          div.className = 'd-none';
-          div.innerHTML = ajax.responseText;
-          document.body.insertBefore(div, document.body.childNodes[0]);
-          }
-      }
-      // this is set to BootstrapTemple website as you cannot 
-      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
-      // while using file:// protocol
-      // pls don't forget to change to your domain :)
-      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
-      
-    </script>
+    
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </body>
