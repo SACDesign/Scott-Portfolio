@@ -16,6 +16,37 @@
     <link rel="stylesheet" href="css/custom.css">
     <!-- Favicon-->
     <link rel="shortcut icon" href="img/favicon3.png">
+     <!-- JavaScript files-->
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
+    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="js/front.js"></script>
+    <script>
+      // ------------------------------------------------------- //
+      //   Inject SVG Sprite - 
+      //   see more here 
+      //   https://css-tricks.com/ajaxing-svg-sprite/
+      // ------------------------------------------------------ //
+      function injectSvgSprite(path) {
+      
+          var ajax = new XMLHttpRequest();
+          ajax.open("GET", path, true);
+          ajax.send();
+          ajax.onload = function(e) {
+          var div = document.createElement("div");
+          div.className = 'd-none';
+          div.innerHTML = ajax.responseText;
+          document.body.insertBefore(div, document.body.childNodes[0]);
+          }
+      }
+      // this is set to BootstrapTemple website as you cannot 
+      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
+      // while using file:// protocol
+      // pls don't forget to change to your domain :)
+      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
+      
+    </script>
   </head>
   <body>
     <div class="sidebar">
@@ -31,16 +62,7 @@
             </li>            
           </ul>
         </div>
-        <div class="px-4 py-3">
-          <ul class="list-inline list-social mb-3">
-            <li class="list-inline-item"><a class="reset-anchor" href="https://www.facebook.com/profile.php?id=100063461629221/"><i class="fab fa-facebook-f" target="_blank"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-twitter"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-instagram"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-linkedin"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fab fa-dribbble"></i></a></li>
-            <li class="list-inline-item"><a class="reset-anchor" href="#!"><i class="fas fa-envelope"></i></a></li>
-          </ul>
-        </div>
+       
       </div>
     </div>
     <div class="page-holder">
@@ -82,7 +104,7 @@
                 <div class="position-relative">
                   <ul class="list-inline listing-tags m-0">
                     <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="detailsina.html">Brand Identity & Logotype</a></li>
-                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsina.html"><img class="img-fluid rounded-lg" src="img/inashirt.png" alt="Wimbledon"/>
+                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsina.html"><img class="img-fluid rounded-lg" src="img/inashirt.jpg" alt="Wimbledon"/>
                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
                       <svg class="svg-icon text-primary svg-icon-sm ms-1">
                         <use xlink:href="#arrow-right-1"> </use>
@@ -100,7 +122,7 @@
                 <div class="position-relative">
                   <ul class="list-inline listing-tags m-0">
                     <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="https://s-carter-responsive-design.000webhostapp.com/case-study/template-1.html">Brochure & Social Media Design</a></li>
-                  </ul><a class="reset-anchor d-block listing-img-holder" href="https://s-carter-responsive-design.000webhostapp.com/case-study/template-1.html" target="_blank"><img class="img-fluid rounded-lg" src="img/ds1_social_instaglacier21.png" target="_blank" alt="Tour de France"/>
+                  </ul><a class="reset-anchor d-block listing-img-holder" href="https://s-carter-responsive-design.000webhostapp.com/case-study/template-1.html" target="_blank"><img class="img-fluid rounded-lg" src="img/ds1_social_instaglacier21.jpg" target="_blank" alt="Tour de France"/>
                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
                       <svg class="svg-icon text-primary svg-icon-sm ms-1">
                         <use xlink:href="#arrow-right-1"> </use>
@@ -118,7 +140,7 @@
                 <div class="position-relative">
                   <ul class="list-inline listing-tags m-0">
                     <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="detailmurderp.html">Brand Identity, Logo Design and Audio Production</a></li>
-                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailmurderp.html"><img class="img-fluid rounded-lg" src="img/bulbfish-vhs-cassette-mockup-021.png" alt="Haunted House"/>
+                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailmurderp.html"><img class="img-fluid rounded-lg" src="img/bulbfish-vhs-cassette-mockup-021.jpg" alt="Haunted House"/>
                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
                       <svg class="svg-icon text-primary svg-icon-sm ms-1">
                         <use xlink:href="#arrow-right-1"> </use>
@@ -136,7 +158,7 @@
                 <div class="position-relative">
                   <ul class="list-inline listing-tags m-0">
                     <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="detailsuninc.html">User Experience</a></li>
-                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsuninc.html"><img class="img-fluid rounded-lg" src="img/userpersonatemplate.png" alt="Best Friends"/>
+                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsuninc.html"><img class="img-fluid rounded-lg" src="img/userpersonatemplate.jpg" alt="Best Friends"/>
                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
                       <svg class="svg-icon text-primary svg-icon-sm ms-1">
                         <use xlink:href="#arrow-right-1"> </use>
@@ -172,7 +194,7 @@
                 <div class="position-relative">
                   <ul class="list-inline listing-tags m-0">
                     <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="detailsgia.html">Emotional Design</a></li>
-                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsgia.html"><img class="img-fluid rounded-lg" src="img/giadesktopmockup.png" alt="Be cool"/>
+                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsgia.html"><img class="img-fluid rounded-lg" src="img/giadesktopmockup.jpg" alt="Be cool"/>
                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
                       <svg class="svg-icon text-primary svg-icon-sm ms-1">
                         <use xlink:href="#arrow-right-1"> </use>
@@ -190,7 +212,7 @@
                 <div class="position-relative">
                   <ul class="list-inline listing-tags m-0">
                     <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="detailsprixpixe.html">App Design</a></li>
-                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsprixpixe.html"><img class="img-fluid rounded-lg" src="img/embossedlogo.png" alt="Spread the Love"/>
+                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsprixpixe.html"><img class="img-fluid rounded-lg" src="img/embossedlogo.jpg" alt="Spread the Love"/>
                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
                       <svg class="svg-icon text-primary svg-icon-sm ms-1">
                         <use xlink:href="#arrow-right-1"> </use>
@@ -208,7 +230,7 @@
                 <div class="position-relative">
                   <ul class="list-inline listing-tags m-0">
                     <li class="list-inline-item"><a class="reset-anchor fw-normal text-gray text-sm" href="detailsccl.html">Logo Ideation, Design & Revision</a></li>
-                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsccl.html"><img class="img-fluid rounded-lg" src="img/420-paper.png" alt="Grounghog Day"/>
+                  </ul><a class="reset-anchor d-block listing-img-holder" href="detailsccl.html"><img class="img-fluid rounded-lg" src="img/420-paper.jpg" alt="Grounghog Day"/>
                     <p class="mb-0 text-primary small d-flex align-items-center listing-btn"> <span>Look inside</span>
                       <svg class="svg-icon text-primary svg-icon-sm ms-1">
                         <use xlink:href="#arrow-right-1"> </use>
@@ -308,38 +330,7 @@
           </div>
         </div>
       </footer>
-    </div>
-    <!-- JavaScript files-->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="vendor/masonry-layout/masonry.pkgd.min.js"></script>
-    <script src="vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="js/front.js"></script>
-    <script>
-      // ------------------------------------------------------- //
-      //   Inject SVG Sprite - 
-      //   see more here 
-      //   https://css-tricks.com/ajaxing-svg-sprite/
-      // ------------------------------------------------------ //
-      function injectSvgSprite(path) {
-      
-          var ajax = new XMLHttpRequest();
-          ajax.open("GET", path, true);
-          ajax.send();
-          ajax.onload = function(e) {
-          var div = document.createElement("div");
-          div.className = 'd-none';
-          div.innerHTML = ajax.responseText;
-          document.body.insertBefore(div, document.body.childNodes[0]);
-          }
-      }
-      // this is set to BootstrapTemple website as you cannot 
-      // inject local SVG sprite (using only 'icons/orion-svg-sprite.svg' path)
-      // while using file:// protocol
-      // pls don't forget to change to your domain :)
-      injectSvgSprite('https://bootstraptemple.com/files/icons/orion-svg-sprite.svg'); 
-      
-    </script>
+    </div>   
     <!-- FontAwesome CSS - loading as last, so it doesn't block rendering-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </body>
